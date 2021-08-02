@@ -3,9 +3,7 @@ import requests
 from lxml import etree # 为了用xpath
 from bs4 import BeautifulSoup
 from filter import filter
-import re
-# lxml 文档辣鸡 用bs4
-import  setting
+
 
 # 指定我们的UserAgent
 user_agent = 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36 SE 2.X MetaSr 1.0'

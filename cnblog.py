@@ -12,7 +12,10 @@ result=[]
 soup=BeautifulSoup(r.text,'lxml')
 print(soup.title.string.split()[0])
 ###############标题处理##########################
-for i in soup.find_all(["p","div",{'class':'cnblogs_code'}]):
+
+
+for i in soup.select('p, div[class^="cnblogs_code"]'):
+# for i in soup.find_all(["p",["div",{'class':'cnblogs_code'}]]):
 # for i in soup.find_all(['p',{'class':'cnblogs_code'}]):
 # for i in soup.find_all('p'):
     print(i.text)

@@ -1,7 +1,4 @@
-#获取基本页面
-#wp数据结构
-#多py文件函数混用
-#标签格式化
-本地导入
-url.py
-setting.py
+#code filter导入没写完 格式化
+# wp code标签也没处写好
+#写一会 urlspider
+# 去重是个大问题  去重 放set结束之后永久化到txt或者数据库 数据量过大后陈旧数据不取

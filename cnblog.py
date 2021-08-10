@@ -8,8 +8,8 @@ url="https://www.cnblogs.com/mayswind/p/15116918.html"
 r = requests.get(url, headers=headers)
 r.encoding = 'utf-8'
 result=[]
-###############标题处理##########################
 soup=BeautifulSoup(r.text,'lxml')
+###############标题处理##########################
 print(soup.title.string.split()[0])
 ###############标题处理##########################
 

@@ -19,10 +19,11 @@ def crc32(x_url):
 #############找到作者所有的文章##########################
 def fd_all(url):
        global list_cyc32
+       url_slice="/".join(url.split("/")[0:4])
        for  i in range(1,9999):
               if(soup.select('div[class^="day"]==None')):
                      break
-              url= "/".join(url.split("/")[0:4])+"/default.html?page="+i
+              url= url_slice+"/default.html?page="+i
               list_cyc32= crc32(url)
 #############找到作者所有的文章##########################
 

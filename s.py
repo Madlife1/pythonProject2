@@ -12,8 +12,23 @@ r = requests.get(url, headers=headers)
 r.encoding = 'utf-8'
 result=[]
 soup=BeautifulSoup(r.text,'lxml')
+count=0
 for i in range(1, 9999):
-    if (soup.select('div[class^="day"]')==''):
-        break
+    r = requests.get(url, headers=headers)
+    r.encoding = 'utf-8'
+    soup1 = BeautifulSoup(r.text, 'lxml')
     url = "/".join(url.split("/")[0:4]) + "/default.html?page=" + str(i)
-    print(url)
+    if (soup1.find_all(name='div', attrs={'class': 'postTitle2 vertical-middle'})==[] and i==1):
+
+        url = "/".join(url.split("/")[0:4]) + "/default.html?page=" + str(i)
+    elif soup1.find_all(name='div', attrs={'class': 'postTitle2 vertical-middle'})==[]:
+        break
+    else:
+        count+=1
+        print(soup1.find_all(name='div', attrs={'class': 'postTitle2 vertical-middle'})==[])
+
+
+    url = "/".join(url.split("/")[0:4]) + "/default.html?page=" + str(i)
+
+print(count)
+    #url 提取
